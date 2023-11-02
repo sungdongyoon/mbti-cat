@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 
 const Wrap = styled.section`
-  width: 500px;
+  width: 400px;
   height: 90%;
   display: flex;
   flex-direction: column;

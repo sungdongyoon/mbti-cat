@@ -11,14 +11,23 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const QuestionText = styled.h1`
-  height: 30%;
+const QuestionText = styled.div`
+  height: 20%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  font-size: 20px;
-  line-height: 30px;
-  text-align: center;
+  margin-top: 50px;
+  ul {
+    li {
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
+  span {
+    font-size: 30px;
+  }
 `;
 
 const Questions = styled.div`
@@ -36,9 +45,9 @@ const QuestionBtn = styled.button`
   height: 25%;
   border: none;
   border-radius: 10px;
-  background-color: #B19CD9;
+  background-color: #83A2FC;
   padding: 20px;
-  font-size: 15px;
+  font-size: 13px;
   color: #fff;
   cursor: pointer;
 `;
@@ -138,11 +147,28 @@ const Question = ({goHome}) => {
   return (
     <Container>
       <QuestionText>
-        {questionData[questionNo]?.id}<br/>{questionData[questionNo]?.title}
+        <span>Q{questionData[questionNo]?.id}</span>
+        <ul>
+          {questionData[questionNo]?.title.map((el) => (
+            <li>{el}</li>
+          ))}
+        </ul>
       </QuestionText>
       <Questions>
-        <QuestionBtn onClick={() => nextQuestion(1, questionData[questionNo].type)}>{questionData[questionNo]?.answera}</QuestionBtn>
-        <QuestionBtn onClick={() => nextQuestion(0, questionData[questionNo].type)}>{questionData[questionNo]?.answerb}</QuestionBtn>
+        <QuestionBtn onClick={() => nextQuestion(1, questionData[questionNo].type)}>
+          <ul>
+            {questionData[questionNo]?.answera.map((el) => (
+              <li>{el}</li>
+            ))}
+          </ul>
+        </QuestionBtn>
+        <QuestionBtn onClick={() => nextQuestion(0, questionData[questionNo].type)}>
+          <ul>
+            {questionData[questionNo]?.answerb.map((el) => (
+              <li>{el}</li>
+            ))}
+          </ul>
+        </QuestionBtn>
       </Questions>
       <Buttons>
         <BackBtn onClick={prevQuestion}>이전 질문으로</BackBtn>
