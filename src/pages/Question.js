@@ -12,57 +12,59 @@ const Container = styled.div`
 `;
 
 const QuestionText = styled.h1`
+  height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
-  padding: 0 50px;
-  flex: 2;
-  background-color: #555;
-  span {
-    font-size: 25px;
-    color: #fff;
-  }
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
 `;
 
 const Questions = styled.div`
   width: 100%;
-  flex: 6;
+  height: 50%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 `;
 
 const QuestionBtn = styled.button`
-  width: 45%;
-  height: 80%;
+  width: 100%;
+  height: 25%;
   border: none;
   border-radius: 10px;
-  background-color: #4F709C;
-  padding: 15px;
-  color: white;
-  font-size: 20px;
+  background-color: #B19CD9;
+  padding: 20px;
+  font-size: 15px;
+  color: #fff;
   cursor: pointer;
 `;
 
 const Buttons = styled.div`
+  height: 20%;
   display: flex;
+  align-items: center;
   gap: 30px;
 `;
 
 const BackBtn = styled.button`
   border: none;
   padding: 10px 30px;
-  background-color: #EC53B0;
-  color: white;
+  background-color: #999;
+  color: #ddd;
+  font-weight: bold;
   cursor: pointer;
 `;
 
 const HomeBtn = styled.button`
   border: none;
   padding: 10px 30px;
-  background-color: orange;
-  color: white;
+  background-color: #999;
+  color: #ddd;
+  font-weight: bold;
   cursor: pointer;
 `;
 
@@ -136,9 +138,7 @@ const Question = ({goHome}) => {
   return (
     <Container>
       <QuestionText>
-        <span>
-          {questionData[questionNo]?.id}. {questionData[questionNo]?.title}
-        </span>
+        {questionData[questionNo]?.id}<br/>{questionData[questionNo]?.title}
       </QuestionText>
       <Questions>
         <QuestionBtn onClick={() => nextQuestion(1, questionData[questionNo].type)}>{questionData[questionNo]?.answera}</QuestionBtn>

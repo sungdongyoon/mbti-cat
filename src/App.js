@@ -11,19 +11,21 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: powderblue;
 `;
 
 const Wrap = styled.section`
-  width: 40%;
-  height: 80%;
+  width: 500px;
+  height: 90%;
   display: flex;
   flex-direction: column;
-  background-color: white;
-  padding: 50px;
   position: relative;
 `;
 
+const Title = styled.header`
+  text-align: center;
+  font-size: 20px;
+  color: #B19CD9;
+`;
 
 function App() {
   const navigate = useNavigate();
@@ -33,6 +35,7 @@ function App() {
   return (
     <Container>
       <Wrap>
+        <Title>키티파이</Title>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/question' element={<Question goHome={goHome}/>}/>

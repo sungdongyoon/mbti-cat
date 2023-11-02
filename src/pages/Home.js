@@ -1,40 +1,41 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import catImage from '../ggompang.jpeg';
+import cat from '../img/cat.png';
 import { useNavigate } from 'react-router';
 
-
-const Title = styled.header`
-  text-align: center;
-  font-size: 40px;
-  color: #BC7AF9;
-  flex: 1;
-`;
-
 const Content = styled.article`
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  flex: 6;
 `;
 
 const ContentImage = styled.img`
   width: 50%;
-  flex: 1;
+`;
+
+const ContentTitle = styled.h1`
+  font-size: 30px;
+  color: #B19CD9;
+  display: flex;
+  align-items: center;
 `;
 
 const ContentText = styled.span`
   display: flex;
   align-items: center;
-  flex: 1;
-  font-size: 20px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 30px;
 `;
 
 const Button = styled.button`
   width: 50%;
   height: 50px;
   border: none;
+  border-radius: 20px;
   background-color: orange;
   color: white;
   font-size: 20px;
@@ -51,10 +52,10 @@ const Home = () => {
   }
   return (
     <>
-    <Title>예비집사 판별기🐈</Title>
     <Content>
-      <ContentImage src={catImage}/>
-      <ContentText>MBTI를 기반으로 나랑 잘 맞는 고양이를 찾아보자</ContentText>
+      <ContentImage src={cat}/>
+      <ContentTitle>MBTI TEST</ContentTitle>
+      <ContentText>MBTI테스트를 통해<br/>나와 맞는 고양이를 찾아봐요!</ContentText>
       <Button onClick={goQuestion}>테스트 시작하기</Button>
     </Content>
     </>
