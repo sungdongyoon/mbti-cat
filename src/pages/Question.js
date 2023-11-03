@@ -3,6 +3,7 @@ import { styled } from 'styled-components';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
 import { createSearchParams } from 'react-router-dom';
+import Button from '../Components/Button';
 
 const Container = styled.div`
   width: 100%;
@@ -174,8 +175,8 @@ const Question = ({goHome}) => {
         </QuestionBtn>
       </Questions>
       <Buttons>
-        <BackBtn onClick={prevQuestion}>이전 질문으로</BackBtn>
-        <HomeBtn onClick={goHome}>홈으로</HomeBtn>
+        <Button prevQuestion={prevQuestion} value={"이전 질문으로"} bgColor={"#ddd"} color={"#999"}/>
+        <Button onClickGo={'/'} value={"홈으로"} bgColor={"#ddd"} color={"#999"}/>
       </Buttons>
     </Container>
   )

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 import { getCatImg } from '../util';
 import axios from 'axios';
+import Button from '../Components/Button';
 
 const Container = styled.div`
   width: 100%;
@@ -59,19 +60,7 @@ const ResultDesc = styled.span`
   letter-spacing: 2px;
 `;
 
-const TryTestBtn = styled.button`
-  width: 50%;
-  height: 50px;
-  font-size: 20px;
-  color: white;
-  letter-spacing: 5px;
-  border: none;
-  border-radius: 20px;
-  background-color: orange;
-  cursor: pointer;
-`;
-
-const Result = ({goHome}) => {
+const Result = () => {
   const [searchParams] = useSearchParams();
   const mbti = searchParams.get("mbti");
 
@@ -113,7 +102,7 @@ const Result = ({goHome}) => {
           {resultData.desc}
         </ResultDesc>
       </ReusltCat>
-      <TryTestBtn onClick={goHome}>테스트 다시하기</TryTestBtn>
+      <Button onClickGo={'/'} value={"테스트 다시하기"} bgColor={"orange"} color={"white"}/>
     </Container>
   )
 }

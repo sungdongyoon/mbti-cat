@@ -1,8 +1,7 @@
 import React from 'react';
-import { styled } from 'styled-components';
-import catImage from '../ggompang.jpeg';
+import styled from 'styled-components';
+import Button from '../Components/Button';
 import cat from '../img/cat.png';
-import { useNavigate } from 'react-router';
 
 const Content = styled.article`
   height: 100%;
@@ -31,32 +30,14 @@ const ContentText = styled.span`
   line-height: 30px;
 `;
 
-const Button = styled.button`
-  width: 50%;
-  height: 50px;
-  border: none;
-  border-radius: 20px;
-  background-color: orange;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  cursor: pointer;
-`;
-
-
 const Home = () => {
-  const navigate = useNavigate();
-  const goQuestion = () => {
-    navigate('/question');
-  }
   return (
     <>
     <Content>
       <ContentImage src={cat}/>
       <ContentTitle>MBTI TEST</ContentTitle>
       <ContentText>MBTI테스트를 통해<br/>나와 맞는 고양이를 찾아봐요!</ContentText>
-      <Button onClick={goQuestion}>테스트 시작하기</Button>
+      <Button onClickGo={'/question'} value={"테스트 시작하기"} bgColor={"orange"} color={"white"}/>
     </Content>
     </>
   )
