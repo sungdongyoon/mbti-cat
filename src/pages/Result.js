@@ -29,7 +29,9 @@ const ResultText = styled.div`
   justify-content: center;
   align-items: center;
   span {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 `;
 
@@ -52,12 +54,14 @@ const ReusltCat = styled.div`
 
 const CatName = styled.h1`
   font-size: 30px;
+  color: #B0926A;
 `;
 
 const ResultDesc = styled.span`
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 2px;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
 const Result = () => {
