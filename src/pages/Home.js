@@ -18,7 +18,7 @@ const ContentImage = styled.img`
 
 const ContentTitle = styled.h1`
   font-size: 30px;
-  color: #B19CD9;
+  color: #B0926A;
   display: flex;
   align-items: center;
 `;

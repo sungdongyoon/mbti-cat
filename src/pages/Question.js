@@ -45,7 +45,7 @@ const QuestionBtn = styled.button`
   height: 25%;
   border: none;
   border-radius: 10px;
-  background-color: #83A2FC;
+  background-color: #B0926A;
   padding: 20px;
   font-size: 13px;
   color: #fff;
@@ -61,18 +61,20 @@ const Buttons = styled.div`
 
 const BackBtn = styled.button`
   border: none;
+  border-radius: 20px;
   padding: 10px 30px;
-  background-color: #999;
-  color: #ddd;
+  background-color: #ddd;
+  color: #999;
   font-weight: bold;
   cursor: pointer;
 `;
 
 const HomeBtn = styled.button`
   border: none;
+  border-radius: 20px;
   padding: 10px 30px;
-  background-color: #999;
-  color: #ddd;
+  background-color: #ddd;
+  color: #999;
   font-weight: bold;
   cursor: pointer;
 `;
@@ -118,6 +120,7 @@ const Question = ({goHome}) => {
       });
     }
   };
+
   const prevQuestion = () => {
     if(questionNo >= 1 && questionNo <= 3) {
       if(totalScore[0].score > 0) {

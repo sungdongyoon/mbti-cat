@@ -12,31 +12,48 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const MBTIResult = styled.span`
-  flex: 1;
+const MBTIResult = styled.div`
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    font-size: 30px;
+  }
+`;
+
+const ResultText = styled.div`
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    font-size: 20px;
+  }
+`;
+
+const CatImage = styled.div`
+  width: 200px;
+  height: 200px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+const ReusltCat = styled.div`
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+const CatName = styled.h1`
   font-size: 30px;
 `;
 
-const CatImage = styled.img`
-  width: 30%;
-  height: 30%;
-  border-radius: 50%;
-  margin-bottom: 50px;
-`;
-
-const ResultText = styled.span`
-  flex: 1;
-  font-size: 20px;
-`;
-
-const ReusltCat = styled.span`
-  flex: 1;
-  font-size: 40px;
-`;
-
 const ResultDesc = styled.span`
-  width: 70%;
-  flex: 1;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 2px;
@@ -49,6 +66,7 @@ const TryTestBtn = styled.button`
   color: white;
   letter-spacing: 5px;
   border: none;
+  border-radius: 20px;
   background-color: orange;
   cursor: pointer;
 `;
@@ -74,11 +92,27 @@ const Result = ({goHome}) => {
   console.log(resultData)
   return (
     <Container>
-      <MBTIResult>MBTI 결과 : {resultData.mbti}</MBTIResult>
-      <ResultText>예비 집사님과 찰떡궁합인 고양이는?</ResultText>
-      <CatImage src={getCatImg(resultData.id)}/>
-      <ReusltCat>{resultData.name}</ReusltCat>
-      <ResultDesc>{resultData.desc}</ResultDesc>
+      <MBTIResult>
+        <span>
+          MBTI 결과 : {resultData.mbti} 
+        </span>
+      </MBTIResult>
+      <ResultText>
+        <span>
+          나와 찰떡궁합인 고양이는?
+        </span>
+      </ResultText>
+      <CatImage>
+        <img src={getCatImg(resultData.id)}/>
+      </CatImage>
+      <ReusltCat>
+        <CatName>
+          {resultData.name}
+        </CatName>
+        <ResultDesc>
+          {resultData.desc}
+        </ResultDesc>
+      </ReusltCat>
       <TryTestBtn onClick={goHome}>테스트 다시하기</TryTestBtn>
     </Container>
   )

@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #E1C78F;
 `;
 
 const Wrap = styled.section`
@@ -19,12 +20,15 @@ const Wrap = styled.section`
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: #fff;
+  padding: 30px;
+  padding-bottom: 0;
 `;
 
 const Title = styled.header`
   text-align: center;
   font-size: 20px;
-  color: #B19CD9;
+  color: #B0926A;
 `;
 
 function App() {
