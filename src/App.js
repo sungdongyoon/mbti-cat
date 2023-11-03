@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { styled } from 'styled-components';
 import Home from './pages/Home';
 import Question from './pages/Question';
@@ -23,6 +23,10 @@ const Wrap = styled.section`
   background-color: #fff;
   padding: 30px;
   padding-bottom: 0;
+  @media screen and (max-width: 392px) {
+    height: 700px;
+    padding: 20px;
+  }
 `;
 
 const Title = styled.header`
@@ -32,18 +36,14 @@ const Title = styled.header`
 `;
 
 function App() {
-  const navigate = useNavigate();
-  const goHome = () => {
-    navigate('/');
-  }
   return (
     <Container>
       <Wrap>
-        <Title>키티파이</Title>
+        <Title>캣미스트리😸</Title>
         <Routes>
           <Route path='/' element={<Home/>}/>
-          <Route path='/question' element={<Question goHome={goHome}/>}/>
-          <Route path='/result' element={<Result goHome={goHome}/>}/>
+          <Route path='/question' element={<Question/>}/>
+          <Route path='/result' element={<Result/>}/>
         </Routes>
       </Wrap>
     </Container>

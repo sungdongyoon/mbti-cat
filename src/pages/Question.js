@@ -29,6 +29,13 @@ const QuestionText = styled.div`
   span {
     font-size: 30px;
   }
+  @media screen and (max-width: 392px) {
+    ul {
+      li {
+        font-size: 15px;
+      }
+    }
+  }
 `;
 
 const Questions = styled.div`
@@ -60,27 +67,7 @@ const Buttons = styled.div`
   gap: 30px;
 `;
 
-const BackBtn = styled.button`
-  border: none;
-  border-radius: 20px;
-  padding: 10px 30px;
-  background-color: #ddd;
-  color: #999;
-  font-weight: bold;
-  cursor: pointer;
-`;
-
-const HomeBtn = styled.button`
-  border: none;
-  border-radius: 20px;
-  padding: 10px 30px;
-  background-color: #ddd;
-  color: #999;
-  font-weight: bold;
-  cursor: pointer;
-`;
-
-const Question = ({goHome}) => {
+const Question = () => {
   const navigate = useNavigate();
   const [questionData, setQuestionData] = useState([]);
   const [questionNo, setQuestionNo] = useState(0);
